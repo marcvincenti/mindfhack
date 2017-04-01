@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AudioModeProvider } from '../../providers/audiomode/audiomode';
+import { ListenerProvider } from '../../providers/listener/listener';
 
 @Component({
   selector: 'page-home',
@@ -7,11 +7,7 @@ import { AudioModeProvider } from '../../providers/audiomode/audiomode';
 })
 export class HomePage {
 
-  constructor(public audiomode: AudioModeProvider) {
-  }
-
-  updateAudioMode(mode: String) {
-    this.audiomode.updateAudioMode(mode);
+  constructor(public listener: ListenerProvider) {
   }
 
 }

@@ -6,6 +6,7 @@ import { HomePage } from '../pages/home/home';
 import { AudioModeProvider } from '../providers/audiomode/audiomode';
 import { ListenerProvider } from '../providers/listener/listener';
 
+import { BackgroundMode } from '@ionic-native/background-mode';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -23,6 +24,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage
   ],
   providers: [
+    BackgroundMode,
     StatusBar,
     SplashScreen,
     AudioModeProvider,

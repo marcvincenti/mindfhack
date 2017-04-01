@@ -7,7 +7,6 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button full (click)="updateAudioMode('normal')">Normal</button>
-  <button ion-button full color="secondary" (click)="updateAudioMode('vibrate')">Vibreur</button>
-  <button ion-button full color="danger" (click)="updateAudioMode('silent')">Silence</button>
+  <button ion-button *ngIf="!listener.listening" (click)="listener.enable()" full>Activate</button>
+  <button ion-button *ngIf="listener.listening" (click)="listener.disable()" full color="danger">Deactivate</button>
 </ion-content>

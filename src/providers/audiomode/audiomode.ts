@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-declare var audio_mode;
+declare var audio_mode: any;
 
 @Injectable()
 export class AudioModeProvider {
