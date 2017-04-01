@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-
-import { NavController } from 'ionic-angular';
-
-declare var audio_mode;
+import { AudioModeProvider } from '../../providers/audiomode/audiomode';
 
 @Component({
   selector: 'page-home',
@@ -10,12 +7,11 @@ declare var audio_mode;
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
-
+  constructor(public audiomode: AudioModeProvider) {
   }
 
   updateAudioMode(mode: String) {
-    audio_mode.change_audio_mode(mode, ()=>{}, ()=>{});
+    this.audiomode.updateAudioMode(mode);
   }
 
 }
