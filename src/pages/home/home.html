@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Hackathon POWWAAA !
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <button ion-button full (click)="updateAudioMode('normal')">Normal</button>
+  <button ion-button full color="secondary" (click)="updateAudioMode('vibrate')">Vibreur</button>
+  <button ion-button full color="danger" (click)="updateAudioMode('silent')">Silence</button>
+</ion-content>
