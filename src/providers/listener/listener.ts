@@ -8,7 +8,7 @@ import { AudioModeProvider } from '../audiomode/audiomode';
 @Injectable()
 export class ListenerProvider {
 
-  private server_uri = "http://nemo.ngrok.io/hackhim";
+  private server_uri = "https://brainere.herokuapp.com/";
   private waiting_time = 1500;
   public listening = false;
 
@@ -33,9 +33,9 @@ export class ListenerProvider {
       this.http.get(this.server_uri)
         .map(res => res.json())
         .subscribe(data => {
-           if(data.pownedTo) {
+           if(data.state == "1") {
              this.audiomode.updateAudioMode('silent');
-           } else {
+           } else if(data.state == "0") {
              this.audiomode.updateAudioMode('normal');
            }
            setTimeout(() => {this.listen_server()}, this.waiting_time);

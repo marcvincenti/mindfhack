@@ -9,7 +9,7 @@ from flask_cors import CORS, cross_origin
 # pip install Flask flask-cors
 # python nemo.py
 
-app = Flask("Nemo")
+app = Flask(__name__)
 CORS(app)
 val = 0
 
@@ -21,4 +21,5 @@ def hello():
 	res = { 'state' : val }
 	return jsonify(res)
 
-app.run(debug=True, host='0.0.0.0', port=8080)
+if __name__ == '__main__':
+    app.run(debug=True, use_reloader=True)
