@@ -1,5 +1,5 @@
 {
-  "name": "Hackathon",
+  "name": "Brainere",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",

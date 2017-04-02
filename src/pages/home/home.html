@@ -1,12 +1,21 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
-      Hackathon POWWAAA !
+      Brain ère - Config
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <button ion-button *ngIf="!listener.listening" (click)="listener.enable()" full>Activate</button>
-  <button ion-button *ngIf="listener.listening" (click)="listener.disable()" full color="danger">Deactivate</button>
+  <img *ngIf="!listener.listening" (click)="listener.enable()" src="assets/logo.png"/>
+  <img *ngIf="listener.listening" (click)="listener.disable()"  src="assets/blogo.png"/>
 </ion-content>
+
+<ion-footer>
+  <button *ngIf="!listener.listening" ion-button (click)="listener.enable()" full>
+    Activate
+  </button>
+  <button *ngIf="listener.listening" ion-button (click)="listener.disable()" full color="danger">
+    Deactivate
+  </button>
+</ion-footer>
